@@ -1,41 +1,3 @@
-// function verifyReply() {
-//     var proposedvalue =valuefield.value;
-//     var pattern = /^\d+$/;
-//     var numbertry = 0;
-//     if(pattern.text(proposedvalue)){
-//         numbertry++;
-//         proposedvalue = parseInt(proposedvalue);
-//         if (proposedvalue < valuefind) {
-//             document.getElementById("result").innerHTML ="Le chiffre à trouver est plus grand";
-//             valuefield.value ="";
-//             valuefield.focus();
-
-            
-//         }else if (proposedvalue > valuefind) {
-//             document.getElementById("result").innerHTML = "Le chiffre à trouver est plus petit";
-//             valuefield.value ="";
-//             valuefield.focus();
-            
-//         }else{
-//             document.getElementById("result").innerHTML = "Vous avez trouver la solution en "+numbertry+ "coups";
-//         }
-//     }else{
-//         document.getElementById("result").innerHTML ="La valeur doit être un entier!!!";
-//     }
-//     return false;
-// }
-// var maxvalue=10;
-// var valuefind = Math.floor((Math.random()* maxvalue)+1);
-// console.log(valuefind);
-// var valuefield = document.getElementById("valuefield");
-
-// if (valuefind > maxvalue) {
-//     valuefind = maxvalue;
-    
-// }
-// document.getElementById("maxvalue").innerHTML = maxvalue;
-// valuefield.value = "";
-// valuefield.focus();
 const plagenombres = {
     easy:{plage: { min: 1 , max: 10 },vie: 3},
     medium: {plage: { min: 1 , max: 50 },vie:2},
@@ -55,6 +17,9 @@ const change = document.getElementById("change");
 const end = document.getElementById("end");
 const contairesul =document.getElementById("contairesul");
 const combien = new Audio('combien.mp3');
+const perdu = new Audio('perdu.mp3');
+const gagne = new Audio('gagné.mp3');
+const ganbare = new Audio('ganbare.mp3');
 let expo ;
 let numbertry = 0;
 let essai = 1;
@@ -106,6 +71,7 @@ function jeudunombremystere() {
     const nombresaisie = parseInt(guessinput.value);
     difficulty.disabled =true;
     change.disabled = true;
+
     if (nombresaisie > plageniveauactuelle.plage.max ) {
         combien.play();
     }
@@ -137,15 +103,18 @@ function jeudunombremystere() {
         guessbutton.disabled =true;
         difficulty.disabled = true;
         change.disabled = true;
+        gagne.play();
     }else if (nombresaisie > nombremystere) {
     contairesul.innerHTML+="<div style='font-weight: bold; color: black;font-size: 18px;'>"+expo+" essai"+"</div>";
     contairesul.innerHTML+=resultText+" ➖";
     contairesul.innerHTML += "<div class=\"separator\"></div>";
+    ganbare.play();
     vie--;
     }else{
         contairesul.innerHTML+="<div style='font-weight: bold; color: black;font-size: 18px;'>"+expo+" essai"+"</div>";
         contairesul.innerHTML+=resultText+" ➕";
         contairesul.innerHTML += "<div class=\"separator\"></div>";
+        ganbare.play();
         vie--;
 
     }
@@ -157,6 +126,7 @@ function jeudunombremystere() {
         change.disabled = true;
         restart.style.display ='flex';
         restart.style.margin ='auto';
+        perdu.play();
         return;
         }
     guessinput.value='';
