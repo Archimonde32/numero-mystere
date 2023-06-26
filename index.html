@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/spacelab/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container mt-5" class="d-flex justify-content-center align-items-center vh-100">
+        <select id="difficulty-select" class="form-select" >
+            <option id="facile" value="easy">Facile</option>
+            <option id="normal" value="medium">Normal</option>
+            <option id="difficile" value="hard">Difficile</option>
+        </select>
+        <button id="change" class="btn btn-outline-info mx-2">changer la difficulté</button>
+        
+        <div class="form-inline mb-3">
+            <div class="form-floating mx-3">
+                <input type="text" class="form-control" id="guess-input" placeholder="">
+                <label for="floatingPassword">Entrer un chiffre</label>
+            </div>
+            <button id="guess-button" class="btn btn-outline-secondary">Tester</button>
+        </div>
+        <div class="rectangle mx-3">
+            <div id="title">Trouvez le numéro mystère</div>
+            <div id="plage"></div>
+            <div class="separator"></div>
+            <p id="essais"></p>
+            <p id="contairesul"></p>
+            <p id="result"></p>
+            <p id="end"></p>
+            <button id="restart" class="btn btn-primary">Rejouer</button>
+        </div>
+        
+        
+        
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="mystere.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jeu du nombre mystère</title>
+  <style>
+    .rectangle {
+      width: 400px;
+      height: auto;
+      border: 1px solid black;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .separator {
+      border-top: 1px solid black;
+      margin: 10px 0;
+    }
+
+    .result {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="rectangle">
+    <div class="title">Trouver le numéro mystère</div>
+    <div class="separator"></div>
+    <div id="tries-block"></div>
+    <div class="separator"></div>
+    <div id="result-block"></div>
+  </div>
+
+  <script>
+    var tries = []; // Tableau pour stocker les essais
+
+    function addTry(number) {
+      tries.push(number);
+
+      var triesBlock = document.getElementById("tries-block");
+      triesBlock.innerHTML += "<div>" + number + "</div>";
+      triesBlock.innerHTML += "<div class=\"separator\"></div>";
+    }
+
+    var numberInput = document.getElementById("number-input");
+    var validateButton = document.getElementById("validate-btn");
+
+    validateButton.addEventListener("click", function() {
+      var number = parseInt(numberInput.value);
+      addTry(number);
+    });
+  </script>
+</body>
+</html>

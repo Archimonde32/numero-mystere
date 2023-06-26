@@ -1,0 +1,60 @@
+#result{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: larger;
+    color: black;
+    text-align: center;
+}
+#end{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+#contairesul{
+    text-align: center;
+}
+#essais{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+}
+
+#difficulty-select{
+    width: 200px;
+    height: 40px;
+    font-size: 15px;
+}
+.rectangle {
+    width: 400px;
+    height: auto;
+    border: 1px solid black;
+    padding: 20px;
+}
+#facile{
+background-color: green;
+color: black;
+}
+#normal{
+    background-color: blue;
+    color: black;
+}
+#difficile{
+    background-color: red;
+    color: black;
+}
+#title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.separator {
+    border-top: 1px solid black;
+    margin: 10px 0;
+}
+#plage{
+    text-align: center;
+}
